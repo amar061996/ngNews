@@ -10,7 +10,7 @@ import { News } from '../news';
 })
 export class NewsComponent implements OnInit {
 
-  private newsArray:News[];
+  private topHeadlines:News[];
 
   constructor(private __newsService:NewsService) {
    }
@@ -24,8 +24,8 @@ export class NewsComponent implements OnInit {
     this.__newsService.getNews()
     .subscribe(news=>{
       console.log(news);  
-      this.newsArray=news;
-      console.log(this.newsArray);
+      this.topHeadlines=news;
+      console.log(this.topHeadlines);
     });
   }
 
