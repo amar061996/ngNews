@@ -21,7 +21,7 @@ export class NewsComponent implements OnInit {
   }
 
   getNews(){
-    this.__newsService.getNews()
+    this.__newsService.getHeadlines()
     .subscribe(news=>{
       console.log(news);  
       this.topHeadlines=news;
