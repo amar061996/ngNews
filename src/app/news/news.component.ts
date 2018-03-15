@@ -10,23 +10,36 @@ import { News } from '../news';
 })
 export class NewsComponent implements OnInit {
 
-  private topHeadlines:News[];
-
+  private domestic:News[];
+  private international:News[];
+  private allNews:any;
+  
   constructor(private __newsService:NewsService) {
    }
 
   ngOnInit() {
-    this.getNews();
+    this.getDomestic();
+    this.getInternational();
+    
     
   }
 
-  getNews(){
-    this.__newsService.getHeadlines()
-    .subscribe(news=>{
-      console.log(news);  
-      this.topHeadlines=news;
-      console.log(this.topHeadlines);
+  getDomestic(){
+    this.__newsService.getDomestic()
+    .subscribe(news=>{  
+      this.domestic=news;
+
     });
   }
+  getInternational(){
+    this.__newsService.getInternational()
+    .subscribe(news=>{
+      console.log(news);  
+      this.international=news;
+      console.log(this.international);
+    });
+  }
+ 
+
 
 }

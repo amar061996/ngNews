@@ -17,11 +17,18 @@ export class NewsService {
     console.log("News Service is working");
   }
 
-  getHeadlines():Observable<News[]>{
+  getDomestic():Observable<News[]>{
       return this._http.get('https://newsapi.org/v2/top-headlines?'+'country=in&' +'apiKey='+this.api_key)
       .map(res=>res.json().articles)
       .catch(this._errorHandler);
   }
+
+  getInternational():Observable<News[]>{
+    return this._http.get('https://newsapi.org/v2/top-headlines?'+'sources=bbc-news,abc-news,al-jazeera-english,cnn&' +'apiKey='+this.api_key)
+    .map(res=>res.json().articles)
+    .catch(this._errorHandler);
+}
+
 
   _errorHandler(error:Response){
     console.error(error);
