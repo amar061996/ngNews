@@ -13,7 +13,8 @@ export class NewsComponent implements OnInit {
   private domestic:News[];
   private international:News[];
   private sports:News[];
-  private allNews:any;
+  private business:News[];
+  
 
   private isDomesticAvailable:boolean;
   private isInternationalAvailable:boolean;
@@ -33,7 +34,7 @@ export class NewsComponent implements OnInit {
     this.getDomestic();
     this.getInternational();
     this.getSports();
-    
+    this.getBusiness();
   }
 
   getDomestic(){
@@ -58,6 +59,14 @@ export class NewsComponent implements OnInit {
     .subscribe(news=>{ 
       this.sports=news.slice(0,4);
       this.isSportsAvailable=true;
+    });
+  }
+
+  getBusiness(){
+    this.__newsService.getBusiness()
+    .subscribe(news=>{ 
+      this.business=news.slice(0,4);
+      this.isBusinessAvailable=true;
     });
   }
 

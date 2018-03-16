@@ -8,6 +8,7 @@ import { NewsComponent } from './news/news.component';
 import { DomesticComponent } from './domestic/domestic.component';
 import { InternationalComponent } from './international/international.component';
 import { SportsComponent } from './sports/sports.component';
+import { BusinessComponent } from './business/business.component';
 
 
 const appRoutes:Routes = [
@@ -15,6 +16,7 @@ const appRoutes:Routes = [
   {path:'domestic',component: DomesticComponent},
   {path:'international',component: InternationalComponent},
   {path:'sports',component: SportsComponent},
+  {path:'business',component: BusinessComponent},
   
 ]
 
@@ -24,7 +26,8 @@ const appRoutes:Routes = [
     NewsComponent,
     DomesticComponent,
     InternationalComponent,
-    SportsComponent
+    SportsComponent,
+    BusinessComponent
   ],
   imports: [
     BrowserModule,
