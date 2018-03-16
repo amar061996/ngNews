@@ -13,8 +13,10 @@ export class NewsComponent implements OnInit {
   private domestic:News[];
   private international:News[];
   private allNews:any;
-  
+  private isDataAvailable:boolean;
+
   constructor(private __newsService:NewsService) {
+    this.isDataAvailable=false;
    }
 
   ngOnInit() {
@@ -27,16 +29,16 @@ export class NewsComponent implements OnInit {
   getDomestic(){
     this.__newsService.getDomestic()
     .subscribe(news=>{  
-      this.domestic=news;
-
+      this.domestic=news.slice(0,4);
+      console.log(this.domestic)
+      this.isDataAvailable=true
     });
   }
   getInternational(){
     this.__newsService.getInternational()
-    .subscribe(news=>{
-      console.log(news);  
-      this.international=news;
-      console.log(this.international);
+    .subscribe(news=>{ 
+      this.international=news.slice(0,4);
+
     });
   }
  
