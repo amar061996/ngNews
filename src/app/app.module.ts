@@ -9,6 +9,7 @@ import { DomesticComponent } from './domestic/domestic.component';
 import { InternationalComponent } from './international/international.component';
 import { SportsComponent } from './sports/sports.component';
 import { BusinessComponent } from './business/business.component';
+import { TechnologyComponent } from './technology/technology.component';
 
 
 const appRoutes:Routes = [
@@ -17,6 +18,7 @@ const appRoutes:Routes = [
   {path:'international',component: InternationalComponent},
   {path:'sports',component: SportsComponent},
   {path:'business',component: BusinessComponent},
+  {path:'technology',component: TechnologyComponent},
   
 ]
 
@@ -27,7 +29,8 @@ const appRoutes:Routes = [
     DomesticComponent,
     InternationalComponent,
     SportsComponent,
-    BusinessComponent
+    BusinessComponent,
+    TechnologyComponent
   ],
   imports: [
     BrowserModule,

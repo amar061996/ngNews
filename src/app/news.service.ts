@@ -30,13 +30,19 @@ export class NewsService {
 }
 
 getSports():Observable<News[]>{
-  return this._http.get('https://newsapi.org/v2/top-headlines?'+'sources=bbc-sport,espn-cric-info,espn,football-italia,nfl-news,the-sport-bible&' +'apiKey='+this.api_key)
+  return this._http.get('https://newsapi.org/v2/top-headlines?'+'sources=bbc-sport,espn-cric-info,espn,football-italia,talksport,nfl-news,the-sport-bible&' +'apiKey='+this.api_key)
   .map(res=>res.json().articles)
   .catch(this._errorHandler);
 }
 
 getBusiness():Observable<News[]>{
-  return this._http.get('https://newsapi.org/v2/top-headlines?'+'sources=australian-financial-review,bloomberg,business-insider,business-insider-uk,crypto-coins-news,financial-post,financial-times,fortune,the-economist,the-wall-street-journal&' +'apiKey='+this.api_key)
+  return this._http.get('https://newsapi.org/v2/top-headlines?'+'sources=australian-financial-review,info-money,bloomberg,business-insider,business-insider-uk,crypto-coins-news,financial-post,financial-times,fortune,the-economist,the-wall-street-journal&' +'apiKey='+this.api_key)
+  .map(res=>res.json().articles)
+  .catch(this._errorHandler);
+}
+
+getTechnology():Observable<News[]>{
+  return this._http.get('https://newsapi.org/v2/top-headlines?'+'sources=hacker-news,mashable,techradar,techcrunch,techcrunch-cn,the-next-web,the-verge,ign&' +'apiKey='+this.api_key)
   .map(res=>res.json().articles)
   .catch(this._errorHandler);
 }

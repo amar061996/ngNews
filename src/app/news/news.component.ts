@@ -14,6 +14,7 @@ export class NewsComponent implements OnInit {
   private international:News[];
   private sports:News[];
   private business:News[];
+  private technology:News[];
   
 
   private isDomesticAvailable:boolean;
@@ -35,13 +36,13 @@ export class NewsComponent implements OnInit {
     this.getInternational();
     this.getSports();
     this.getBusiness();
+    this.getTechnology();
   }
 
   getDomestic(){
     this.__newsService.getDomestic()
     .subscribe(news=>{  
       this.domestic=news.slice(0,4);
-      console.log(this.domestic)
       this.isDomesticAvailable=true
     });
   }
@@ -67,6 +68,13 @@ export class NewsComponent implements OnInit {
     .subscribe(news=>{ 
       this.business=news.slice(0,4);
       this.isBusinessAvailable=true;
+    });
+  }
+  getTechnology(){
+    this.__newsService.getTechnology()
+    .subscribe(news=>{ 
+      this.technology=news.slice(0,4);
+      this.isTechnologyAvailable=true;
     });
   }
 

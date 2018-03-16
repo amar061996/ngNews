@@ -1,19 +1,23 @@
 <!--Domestic News -->
 <app-domestic *ngIf='isDomesticAvailable' [domestic]='domestic'></app-domestic>
-<a class="btn btn-secondary " href="/domestic">See More... </a><br><br>
+<a class="btn btn-secondary " routerLink="/domestic">See More... </a><br><br>
 <hr>
 
 <!-- International news-->
 <app-international *ngIf='isInternationalAvailable'  [international]='international'></app-international>
-<a class="btn btn-secondary " href="/international">See More... </a><br><br>
+<a class="btn btn-secondary " routerLink="/international">See More... </a><br><br>
 <hr>
 
 <!-- Sports news-->
 <app-sports *ngIf='isSportsAvailable'  [sports]='sports'></app-sports>
-<a class="btn btn-secondary " href="/sports">See More... </a><br><br>
+<a class="btn btn-secondary " routerLink="/sports">See More... </a><br><br>
 <hr>
 
 <!-- Business news-->
 <app-business *ngIf='isBusinessAvailable'  [business]='business'></app-business>
-<a class="btn btn-secondary " href="/business">See More... </a><br><br>
+<a class="btn btn-secondary " routerLink="/business">See More... </a><br><br>
 <hr>
+
+<!-- Technology news-->
+<app-technology *ngIf='isTechnologyAvailable'  [technology]='technology'></app-technology>
+<a class="btn btn-secondary " routerLink="/technology">See More... </a><br><br>
