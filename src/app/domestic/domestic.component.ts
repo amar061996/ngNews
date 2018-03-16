@@ -15,8 +15,8 @@ export class DomesticComponent implements OnInit {
   constructor(private __newsService:NewsService) { }
 
   ngOnInit() {
-    console.log('child domestic')
-    console.log(this.domestic)
+    
+    
     if(this.domestic===undefined){
       this.getDomestic();
     }
@@ -27,7 +27,6 @@ export class DomesticComponent implements OnInit {
     .subscribe(news=>{  
       
       this.domestic=news;
-      console.log("Child domestic");
       console.log(this.domestic);
 
     });

@@ -6,18 +6,22 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NewsComponent } from './news/news.component';
 import { DomesticComponent } from './domestic/domestic.component';
+import { InternationalComponent } from './international/international.component';
 
 
 const appRoutes:Routes = [
+  {path:'',component: NewsComponent },
   {path:'domestic',component: DomesticComponent},
-  {path:'',component: NewsComponent }
+  {path:'international',component: InternationalComponent},
+  
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     NewsComponent,
-    DomesticComponent
+    DomesticComponent,
+    InternationalComponent
   ],
   imports: [
     BrowserModule,
