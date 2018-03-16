@@ -12,6 +12,7 @@ export class NewsComponent implements OnInit {
 
   private domestic:News[];
   private international:News[];
+  private sports:News[];
   private allNews:any;
 
   private isDomesticAvailable:boolean;
@@ -31,7 +32,7 @@ export class NewsComponent implements OnInit {
   ngOnInit() {
     this.getDomestic();
     this.getInternational();
-    
+    this.getSports();
     
   }
 
@@ -43,6 +44,7 @@ export class NewsComponent implements OnInit {
       this.isDomesticAvailable=true
     });
   }
+
   getInternational(){
     this.__newsService.getInternational()
     .subscribe(news=>{ 
@@ -51,6 +53,13 @@ export class NewsComponent implements OnInit {
     });
   }
  
+  getSports(){
+    this.__newsService.getSports()
+    .subscribe(news=>{ 
+      this.sports=news.slice(0,4);
+      this.isSportsAvailable=true;
+    });
+  }
 
 
 }

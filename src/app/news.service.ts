@@ -28,7 +28,11 @@ export class NewsService {
     .map(res=>res.json().articles)
     .catch(this._errorHandler);
 }
-
+getSports():Observable<News[]>{
+  return this._http.get('https://newsapi.org/v2/top-headlines?'+'sources=bbc-sport,espn-cric-info,espn,football-italia,nfl-news,the-sport-bible&' +'apiKey='+this.api_key)
+  .map(res=>res.json().articles)
+  .catch(this._errorHandler);
+}
 
   _errorHandler(error:Response){
     console.error(error);
