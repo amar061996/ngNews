@@ -47,6 +47,11 @@ getTechnology():Observable<News[]>{
   .catch(this._errorHandler);
 }
 
+getArticles(searchText:string ):Observable<News[]>{
+  return this._http.get('https://newsapi.org/v2/everything?q='+searchText+'&apiKey='+this.api_key)
+  .map(res=>res.json().articles)
+  .catch(this._errorHandler);
+}
   _errorHandler(error:Response){
     console.error(error);
     return Observable.throw(error || 'Server Error');
