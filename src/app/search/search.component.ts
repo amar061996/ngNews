@@ -20,13 +20,11 @@ export class SearchComponent implements OnInit {
 
     this.route.params.subscribe(params=>{
       this.searchText=params['searchText'];
-      console.log(this.searchText);
       this.__newsService.getArticles(this.searchText)
-    .subscribe(news=>{
-      this.articles=news;
-      console.log(this.articles);
+      .subscribe(news=>{
+        this.articles=news;
     });
-    })
+    });
      
   }
 

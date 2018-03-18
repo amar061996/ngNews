@@ -11,6 +11,7 @@ import { SportsComponent } from './sports/sports.component';
 import { BusinessComponent } from './business/business.component';
 import { TechnologyComponent } from './technology/technology.component';
 import { SearchComponent } from './search/search.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
 const appRoutes:Routes = [
@@ -21,6 +22,7 @@ const appRoutes:Routes = [
   {path:'business',component: BusinessComponent},
   {path:'technology',component: TechnologyComponent},
   {path:'articles/:searchText',component: SearchComponent},
+  {path:'**',component: PagenotfoundComponent},
 ]
 
 @NgModule({
@@ -32,7 +34,8 @@ const appRoutes:Routes = [
     SportsComponent,
     BusinessComponent,
     TechnologyComponent,
-    SearchComponent
+    SearchComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
